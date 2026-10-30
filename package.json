@@ -2,7 +2,7 @@
     "name": "word-selection-highlighter",
     "displayName": "Word and Selection Highlighter",
     "description": "Highlights the word under the cursor and selected text, with matching occurrences shown in the editor and overview ruler.",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "icon": "images/icon.png",
     "publisher": "ShoaibShakeel",
     "repository": {
@@ -24,7 +24,7 @@
             "properties": {
                 "word-selection-highlighter.matchBrackets": {
                     "type": "boolean",
-                    "default": true,
+                    "default": false,
                     "description": "Highlight matching brackets with this extension."
                 }
             }

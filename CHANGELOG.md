@@ -2,6 +2,10 @@
 
 All notable changes to Word and Selection Highlighter are recorded here.
 
+## [0.4.1] - 2026-10-30
+
+- Disabled matching bracket highlighting by default; it can be enabled with `word-selection-highlighter.matchBrackets`.
+
 ## [0.4.0] - 2026-10-30
 
 - Checks global selection, occurrence, and bracket settings on activation, applying expected values when any are missing or different.
