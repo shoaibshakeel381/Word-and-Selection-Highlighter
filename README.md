@@ -26,4 +26,13 @@ The extension's bracket pair highlighting can be disabled with the `matchBracket
 }
 ```
 
+The selection highlight and matching-word overview ruler colors can be customized with color settings:
+
+```json
+{
+  "word-selection-highlighter.selectionColor": "#FFB3C7",
+  "word-selection-highlighter.rulerColor": "#FF99B4"
+}
+```
+
 Restarting VS Code is not required after changing these settings.

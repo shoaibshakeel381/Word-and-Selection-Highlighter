@@ -2,6 +2,11 @@
 
 All notable changes to Word and Selection Highlighter are recorded here.
 
+## [0.4.2] - 2026-10-30
+
+- Adds configurable selection and overview ruler indicator colors through `word-selection-highlighter.selectionColor` and `word-selection-highlighter.rulerColor`.
+- Applies color setting changes immediately and clarifies that the ruler color is used for matching-word indicators.
+
 ## [0.4.1] - 2026-10-30
 
 - Disabled matching bracket highlighting by default; it can be enabled with `word-selection-highlighter.matchBrackets`.

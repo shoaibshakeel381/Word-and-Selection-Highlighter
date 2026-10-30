@@ -76,6 +76,12 @@ async function activate(context) {
         bracket_option = false;
     }
     subscriptions.push(vscode.window.onDidChangeTextEditorSelection(on_change_select));
+    subscriptions.push(vscode.workspace.onDidChangeConfiguration((event) => {
+        if (event.affectsConfiguration("word-selection-highlighter.selectionColor") ||
+            event.affectsConfiguration("word-selection-highlighter.rulerColor")) {
+            on_change_select();
+        }
+    }));
     context.subscriptions.push(...subscriptions);
     // vscode.languages.registerHoverProvider('*', {
     //     provideHover(document, position, token) {
@@ -91,21 +97,24 @@ function on_change_select() {
     if (!e) {
         return;
     }
+    const colorSettings = vscode.workspace.getConfiguration("word-selection-highlighter");
+    const selectionColor = colorSettings.get("selectionColor", "#FFB3C7");
+    const rulerColor = colorSettings.get("rulerColor", "#FF99B4");
     var s = e.document.getText(e.selection);
     highlight.dispose();
     highlight = vscode.window.createTextEditorDecorationType({
-        light: cochineal_light,
-        dark: cochineal_dark
+        light: { ...cochineal_light, overviewRulerColor: rulerColor },
+        dark: { ...cochineal_dark, overviewRulerColor: rulerColor }
     });
     selecthighlight.dispose();
     selecthighlight = vscode.window.createTextEditorDecorationType({
-        light: select_cochineal_light,
-        dark: select_cochineal_dark
+        light: { ...select_cochineal_light, backgroundColor: selectionColor, overviewRulerColor: selectionColor },
+        dark: { ...select_cochineal_dark, backgroundColor: selectionColor, overviewRulerColor: selectionColor }
     });
     mselecthighlight.dispose();
     mselecthighlight = vscode.window.createTextEditorDecorationType({
-        light: mselect_cochineal_light,
-        dark: mselect_cochineal_dark
+        light: { ...mselect_cochineal_light, backgroundColor: selectionColor, overviewRulerColor: selectionColor },
+        dark: { ...mselect_cochineal_dark, backgroundColor: selectionColor, overviewRulerColor: selectionColor }
     });
     brackets_color[0].dispose();
     brackets_color[1].dispose();
