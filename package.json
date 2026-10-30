@@ -2,9 +2,13 @@
     "name": "word-selection-highlighter",
     "displayName": "Word and Selection Highlighter",
     "description": "Highlights the word under the cursor and selected text, with matching occurrences shown in the editor and overview ruler.",
-    "version": "0.3.1",
+    "version": "0.4.0",
     "icon": "images/icon.png",
     "publisher": "ShoaibShakeel",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/shoaibshakeel381/Word-and-Selection-Highlighter"
+    },
     "engines": {
         "vscode": "^1.16.0"
     },

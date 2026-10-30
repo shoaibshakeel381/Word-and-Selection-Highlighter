@@ -2,11 +2,14 @@
 
 All notable changes to Word and Selection Highlighter are recorded here.
 
+## [0.4.0] - 2026-10-30
+
+- Checks global selection, occurrence, and bracket settings on activation, applying expected values when any are missing or different.
+
 ## [0.3.1] - 2026-10-30
 
 - Updated the README with selection highlighting and nested bracket highlighting illustrations.
 - Clarified the documentation for the `matchBrackets` setting.
-- Applies the expected global selection, occurrence, and bracket settings on activation when their current values differ.
 
 ## [0.3.0] - 2026-10-30
 
