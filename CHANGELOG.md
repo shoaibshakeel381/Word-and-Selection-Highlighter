@@ -1,47 +1,18 @@
 # Change Log
 
-All notable changes to the "Word and Selection Highlighter" extension will be documented in this file.
+All notable changes to Word and Selection Highlighter are recorded here.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [0.3.1] - 2026-10-30
+
+- Updated the README with selection highlighting and nested bracket highlighting illustrations.
+- Clarified the documentation for the `matchBrackets` setting.
+- Applies the expected global selection, occurrence, and bracket settings on activation when their current values differ.
 
 ## [0.3.0] - 2026-10-30
 
-- Removed activation-time editor setting changes, which could overwrite user preferences and used obsolete values for occurrence and bracket highlighting.
-- Documented current optional VS Code setting values and declared the extension's bracket-highlighting option in the Settings UI.
-- Disposed the selection-change listener with the extension and guarded against there being no active editor.
-- Renamed the extension to Word and Selection Highlighter, updated its identifier, and renamed its bracket-highlighting setting.
-
-#### 0.2.4
-++ disable Bracket Pair Color Setting
-
-#### 0.1.1
-++ Bracket Pair Color  
-![PNG](https://raw.githubusercontent.com/ebicochineal/Images/master/bracket.png)  
-++
-```
-"editor.matchBrackets": false,
-```
-
---
-```
-"workbench.colorCustomizations": {
-        "editor.selectionBackground": "#FFB3C7"
-},
-```
-#### 0.0.7
-++ this extension adds user settings  
--- this extension adds workspace settings  
-#### 0.0.5
-++ this extension adds workspace settings  
-#### 0.0.3
-this extension not adds settings
-not adds recomend settings
-```
-// recomend settings
-"workbench.colorCustomizations": {
-        "editor.selectionBackground": "#FFB3C7"
-},
-"editor.selectionHighlight": false,
-"editor.occurrencesHighlight": false,
-```
-
+- Highlights the word under the cursor and matching occurrences in the editor and overview ruler.
+- Highlights selected text and matching brackets, with bracket highlighting configurable through `word-selection-highlighter.matchBrackets`.
+- Preserves the user's VS Code settings instead of changing editor settings on activation.
+- Documents optional VS Code settings for disabling overlapping built-in selection, occurrence, and bracket highlights.
+- Disposes the selection-change listener with the extension and safely handles the absence of an active editor.
+- Names the extension Word and Selection Highlighter and declares its bracket-highlighting setting in the Settings UI.

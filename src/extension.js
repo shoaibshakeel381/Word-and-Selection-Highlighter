@@ -56,9 +56,22 @@ var mselecthighlight = vscode.window.createTextEditorDecorationType({});
 var brackets_color = new Array(6).fill(vscode.window.createTextEditorDecorationType({}));
 var prev_ver = 0;
 var bracket_option = true;
-function activate(context) {
+async function activate(context) {
     let subscriptions = [];
     const op = vscode.workspace.getConfiguration();
+    // Keep VS Code's overlapping highlights disabled without rewriting settings
+    // that already have the expected global value.
+    const editorSettings = vscode.workspace.getConfiguration("editor");
+    const expectedSettings = [
+        ["selectionHighlight", false],
+        ["occurrencesHighlight", "off"],
+        ["matchBrackets", "never"]
+    ];
+    for (const [key, value] of expectedSettings) {
+        if (editorSettings.inspect(key).globalValue !== value) {
+            await editorSettings.update(key, value, vscode.ConfigurationTarget.Global);
+        }
+    }
     if (op.get("word-selection-highlighter.matchBrackets") == false) {
         bracket_option = false;
     }

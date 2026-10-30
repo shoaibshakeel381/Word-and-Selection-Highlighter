@@ -2,9 +2,11 @@
 
 Highlights the word under the cursor and displays matching occurrences in the editor and overview ruler.
 
+![Selection and matching word highlights](images/selection-highlight-preview.png)
+
 ## Settings
 
-The extension does not change VS Code settings automatically. To disable VS Code's overlapping built-in highlights, add these optional settings:
+On activation, the extension checks these global VS Code settings and updates any missing or different value to disable overlapping built-in highlights:
 
 ```json
 {
@@ -14,9 +16,9 @@ The extension does not change VS Code settings automatically. To disable VS Code
 }
 ```
 
-`editor.selectionHighlight` remains a boolean. `editor.occurrencesHighlight` and `editor.matchBrackets` use string values in current VS Code versions.
+![Nested bracket pair highlighting](images/bracket.png)
 
-The extension's own bracket highlighting can be disabled with:
+The extension's bracket pair highlighting can be disabled with the `matchBrackets` setting:
 
 ```json
 {

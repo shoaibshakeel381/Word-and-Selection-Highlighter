@@ -2,7 +2,7 @@
     "name": "word-selection-highlighter",
     "displayName": "Word and Selection Highlighter",
     "description": "Highlights the word under the cursor and selected text, with matching occurrences shown in the editor and overview ruler.",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "icon": "images/icon.png",
     "publisher": "ShoaibShakeel",
     "engines": {
@@ -26,9 +26,9 @@
             }
         }
     },
-    "main": "./out/src/extension",
+    "main": "./src/extension",
     "scripts": {
-        "vscode:prepublish": "node -e \"require('fs').accessSync('out/src/extension.js')\"",
+        "vscode:prepublish": "node -e \"require('fs').accessSync('src/extension.js')\"",
         "package": "npm exec --yes --package @vscode/vsce -- vsce package --no-dependencies --allow-star-activation --allow-missing-repository"
     }
 }
