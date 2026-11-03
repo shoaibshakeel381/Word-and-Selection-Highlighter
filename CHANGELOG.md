@@ -2,6 +2,10 @@
 
 All notable changes to Word and Selection Highlighter are recorded here.
 
+## [0.5.0] - 2026-11-03
+
+- Uses the configured selection color for both the word under the cursor and selected text, with `#FF99B4` as the default.
+
 ## [0.4.2] - 2026-10-30
 
 - Adds configurable selection and overview ruler indicator colors through `word-selection-highlighter.selectionColor` and `word-selection-highlighter.rulerColor`.

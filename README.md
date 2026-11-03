@@ -26,11 +26,11 @@ The extension's bracket pair highlighting can be disabled with the `matchBracket
 }
 ```
 
-The selection highlight and matching-word overview ruler colors can be customized with color settings:
+The word under the cursor, selected text, and matching-word overview ruler colors can be customized with color settings. The same `selectionColor` is used for the cursor word and selected text:
 
 ```json
 {
-  "word-selection-highlighter.selectionColor": "#FFB3C7",
+  "word-selection-highlighter.selectionColor": "#FF99B4",
   "word-selection-highlighter.rulerColor": "#FF99B4"
 }
 ```

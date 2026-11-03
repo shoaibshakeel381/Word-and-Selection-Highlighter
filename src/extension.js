@@ -98,13 +98,13 @@ function on_change_select() {
         return;
     }
     const colorSettings = vscode.workspace.getConfiguration("word-selection-highlighter");
-    const selectionColor = colorSettings.get("selectionColor", "#FFB3C7");
+    const selectionColor = colorSettings.get("selectionColor", "#FF99B4");
     const rulerColor = colorSettings.get("rulerColor", "#FF99B4");
     var s = e.document.getText(e.selection);
     highlight.dispose();
     highlight = vscode.window.createTextEditorDecorationType({
-        light: { ...cochineal_light, overviewRulerColor: rulerColor },
-        dark: { ...cochineal_dark, overviewRulerColor: rulerColor }
+        light: { ...cochineal_light, backgroundColor: selectionColor, overviewRulerColor: rulerColor },
+        dark: { ...cochineal_dark, backgroundColor: selectionColor, overviewRulerColor: rulerColor }
     });
     selecthighlight.dispose();
     selecthighlight = vscode.window.createTextEditorDecorationType({
